@@ -1,0 +1,20 @@
+/*
+Theme Name: cr12_victoria_traveler
+Author: Victoria Kahr
+Description:Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio culpa perspiciatis in neque eos doloribus recusandae illum fuga maxime? Odio sapiente aspernatur vel! Aspernatur nisi ut perspiciatis id ipsa doloremque.
+Version: 1.0
+*/
+
+body {
+    border: 1px solid black;
+}
+
+#frontbody {
+    background-image: url(https://cdn.pixabay.com/photo/2019/03/24/20/10/tibet-4078553_960_720.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+#navbody {
+    margin-bottom: 8%;
+}
