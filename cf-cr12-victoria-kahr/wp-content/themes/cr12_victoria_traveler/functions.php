@@ -1,7 +1,7 @@
 <?php 
 
 function set_excerpt_length(){
-    return 45; //the number of words you want displayed
+    return 25; //the number of words you want displayed
 }
 add_filter('excerpt_length','set_excerpt_length');
 

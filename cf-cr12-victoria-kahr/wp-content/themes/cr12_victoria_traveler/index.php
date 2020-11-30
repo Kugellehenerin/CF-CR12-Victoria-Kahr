@@ -1,37 +1,39 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="container" id="indexbody">
+  <div class="row">
+        <?php if(have_posts()) : ?> 
 
-       <?php if(have_posts()) : ?> <!--  If there are posts available  -->
+        <?php while(have_posts()) : the_post(); ?> 
 
-       <?php while(have_posts()) : the_post(); ?> <!-- if there are posts, iterate the posts in the loop-->
-       <a href="<?php the_permalink(); ?>"><!--retrieves URL for the permalink-->
-          <?php the_title(); ?>    <!--retrieves blog title-->
-       </a>
+    <div class="col-4" style="width: 18rem;">
+      <div class="card mb-5">
+        <div class="card-body">
+          <?php if(has_post_thumbnail()) : ?>
+          <?php the_post_thumbnail('thumbnail'); ?>
+          <?php endif; ?>
+            <h5 class="card-title mt-3"> <a href="<?php the_permalink(); ?>"><!--retrieves URL for the permalink-->
+            <?php the_title(); ?>    <!--retrieves blog title-->
+            </a></h5>
+            <p> Author: <?php the_author(); ?></p>
+            <p><?php the_time('F j, Y g:i a'); ?></p>
+            <p class="card-text"><?php the_excerpt(); ?></p>
+          </div>
+      </div>
+    </div>
+        <?php endwhile; ?>
 
-       <p><?php the_time('F j, Y g:i a'); ?></p><!--retrieves date blog entry was created-->
+        <?php else :?> 
 
-       <p> <?php the_author(); ?></p><!--retrieves author of blog entry-->
-      
-      <?php if(has_post_thumbnail()) : ?>
-        <!-- the_post_thumbnail ist für die größe des Bildes!!! -->
-        <?php the_post_thumbnail('medium'); ?>
-        <?php endif; ?>
+        <p>No posts found</p> 
+        <?php endif; ?> 
 
-       <?php the_excerpt(); ?><!--retrieves excerpt-->
-
-       <?php endwhile; ?><!--end the while loop-->
-
-       <?php else :?> <!-- if no posts are found then: -->
-
-       <p>No posts found</p>  <!-- no posts found displayed -->
-       <?php endif; ?> <!-- end if -->
-
-       <?php
-        if(is_active_sidebar('sidebar')):
-        dynamic_sidebar('sidebar');
-        endif;  
-      ?>
+        <?php
+          if(is_active_sidebar('sidebar')):
+          dynamic_sidebar('sidebar');
+          endif;  
+        ?>
+  </div>
 </div>
 
 <?php get_footer(); ?>

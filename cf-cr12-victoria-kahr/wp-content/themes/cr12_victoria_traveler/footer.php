@@ -74,7 +74,8 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="www.linkedin.com/in/victoria-kahr">Victoria Kahr</a>
+      <!-- target="blank" damit direkt ein neuer Tab geöffnet wird -->
+    <a href="http://www.linkedin.com/in/victoria-kahr" target="blank">Victoria Kahr</a>
   </div>
   <!-- Copyright -->
 

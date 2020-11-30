@@ -5,7 +5,7 @@
        <?php if(have_posts()) : ?> <!--  If there are pages available  -->
 
        <?php while(have_posts()) : the_post(); ?> <!-- if there are pages, iterate the page in the loop-->
-           <?php the_title(); ?>     <!--retrieves page title-->
+          <h1> <?php the_title(); ?> </h1>      <!--retrieves page title-->
        
        <?php the_content();?><!--retrieves content-->
 

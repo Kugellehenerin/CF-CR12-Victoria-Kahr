@@ -1,19 +1,16 @@
 <?php get_header(); ?>
    
 <div class="container">
-   <h1>Hello from a single post</h1>
- 
-
        <?php if(have_posts()) : ?> <!--  If there are posts available  -->
 
        <?php while(have_posts()) : the_post(); ?> <!-- if there are posts, iterate the posts in the loop
 -->
        
-           <?php the_title(); ?>    <!--retrieves blog title-->
+        <h1><?php the_title(); ?></h1>    <!--retrieves blog title-->
+
+        <p>Author: <?php the_author(); ?></p><!--retrieves author of blog entry-->
 
        <p><?php the_time('F j, Y g:i a'); ?></p><!--retrieves date blog entry was created-->
-
-       <p> <?php the_author(); ?></p><!--retrieves author of blog entry-->
 
        <?php if(has_post_thumbnail()) : ?>
         <!-- the_post_thumbnail ist für die größe des Bildes!!! -->
